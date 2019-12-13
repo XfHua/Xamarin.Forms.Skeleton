@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:extension="clr-namespace:Xamarin.Forms.Skeleton;assembly=Xamarin.Forms.Skeleton"
+             x:Class="App595.MainPage">
+
+    <ScrollView BackgroundColor="White">
+        <StackLayout
+               Margin="15"
+               extension:Skeleton.IsParent="True"
+               extension:Skeleton.IsBusy="{Binding IsLoadBusy}"
+               extension:Skeleton.BackgroundColor="Gray"
+               extension:Skeleton.Animation="Fade"
+               extension:Skeleton.AnimationInterval="600">
+            <Image
+                   x:Name="ImgSelfie"
+                   HeightRequest="200" WidthRequest="200" BackgroundColor="White"
+                   Source="selfie"
+                   extension:Skeleton.IsBusy="{Binding IsLoadBusy}"
+                   extension:Skeleton.Animation="Beat"
+                   extension:Skeleton.BackgroundColor="DarkGray"/>
+            <Label Text="Location :" FontAttributes="Bold"/>
+            <Editor
+                   Text="{Binding Attend.AddressDetail}" x:Name="EdtLocation" IsEnabled="False" AutoSize="TextChanges"
+                   extension:Skeleton.IsBusy="{Binding IsLoadBusy}"
+                   extension:Skeleton.Animation="Fade"
+                   extension:Skeleton.BackgroundColor="DarkGray"/>
+
+            <Label Text="Time :" FontAttributes="Bold"/>
+            <Entry
+                   Text="{Binding Attend.Created}" x:Name="EntTime" IsEnabled="False"
+                   extension:Skeleton.IsBusy="{Binding IsLoadBusy}"
+                   extension:Skeleton.Animation="Beat"
+                   extension:Skeleton.BackgroundColor="DarkGray" />
+
+            <Label Text="Action :" FontAttributes="Bold"/>
+            <Label
+                   Text="{Binding Attend.Activity}" x:Name="LblAction" FontSize="Medium" TextColor="Black"
+                   extension:Skeleton.IsBusy="{Binding IsLoadBusy}"
+                   extension:Skeleton.Animation="Fade"
+                   extension:Skeleton.BackgroundColor="DarkGray"/>
+
+            <Label Text="Noted :" FontAttributes="Bold"/>
+            <Editor
+                   Text="{Binding Attend.Note}" x:Name="EntNote" IsEnabled="False" AutoSize="TextChanges"
+                   extension:Skeleton.IsBusy="{Binding IsLoadBusy}"
+                   extension:Skeleton.Animation="Fade"
+                   extension:Skeleton.BackgroundColor="DarkGray"/>
+
+        </StackLayout>
+    </ScrollView>
+
+
+</ContentPage>
